@@ -1,11 +1,11 @@
 class CreateRoutes < ActiveRecord::Migration[6.1]
   def change
     create_table :routes do |t|
-      t.string :date
+      t.date :date
       t.string :name
       t.string :location
       t.string :sector
-      t.string :grade
+      t.integer :grade
       t.string :observation
 
       t.timestamps
