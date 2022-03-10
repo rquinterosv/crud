@@ -4,6 +4,7 @@ class RoutesController < ApplicationController
   # GET /routes or /routes.json
   def index
     @routes = Route.all
+    @route = Route.new
   end
 
   # GET /routes/1 or /routes/1.json

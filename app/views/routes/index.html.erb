@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Routes</h1>
+<%= render 'form', route: @route %>
 
 <table>
   <thead>
@@ -15,20 +16,8 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @routes.each do |route| %>
-      <tr>
-        <td><%= route.date %></td>
-        <td><%= route.name %></td>
-        <td><%= route.location %></td>
-        <td><%= route.sector %></td>
-        <td><%= route.grade %></td>
-        <td><%= route.observation %></td>
-        <td><%= link_to 'Show', route %></td>
-        <td><%= link_to 'Edit', edit_route_path(route) %></td>
-        <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <tbody id="routes">
+    <%= render @routes%>
   </tbody>
 </table>
 
