@@ -23,7 +23,11 @@ class RoutesController < ApplicationController
   # POST /routes or /routes.json
   def create
     @route = Route.new(route_params)
-
+    
+    puts @route
+    puts @route.name
+    puts @route.grade
+    puts @route.date
     respond_to do |format|
       if @route.save
         format.html { redirect_to route_url(@route), notice: "Route was successfully created." }
@@ -43,9 +47,11 @@ class RoutesController < ApplicationController
       if @route.update(route_params)
         format.html { redirect_to route_url(@route), notice: "Route was successfully updated." }
         format.json { render :show, status: :ok, location: @route }
+        format.js
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @route.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
