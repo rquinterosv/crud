@@ -2,35 +2,7 @@
 
 <%= link_to 'Root path', root_path, data: {confirm: 'Desea volver a root_path?' }%>
 
-<p>
-  <strong>Date:</strong>
-  <%= @route.date %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @route.name %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @route.location %>
-</p>
-
-<p>
-  <strong>Sector:</strong>
-  <%= @route.sector %>
-</p>
-
-<p>
-  <strong>Grade:</strong>
-  <%= @route.grade %>
-</p>
-
-<p>
-  <strong>Observation:</strong>
-  <%= @route.observation %>
-</p>
+<%= render partial: 'route_complete', locals: {route: @route}%>
 
 <%= link_to 'Edit', edit_route_path(@route) %> |
 <%= link_to 'Back', routes_path %>
